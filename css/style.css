@@ -1,0 +1,73 @@
+body {
+	background-color: #FFCC66;
+	color: #336699;
+}
+
+/*Board Spaces*/
+.two.columns.offset-by-one.column p {
+	font-size: 4em;
+	text-align: center;
+    border-style: solid;
+    border-color: #FFB739;
+    color: #FFFFFF;
+    position: relative;
+    top: .2em;
+}
+
+/*Board Vertical Lines*/
+.column.vertical {
+	text-align: center;
+    color: #336699;
+    background-color: #336699;
+    position: relative;
+    left: 2%;
+    height: 8em;
+    width: 2%;
+    z-index: 2;
+}
+
+/*Board Horizontal Lines*/
+.column.horizontal{
+	text-align: center;
+    color: #FFB739;
+    background-color: #FFB739;
+    height: 1.2em;
+    width: 85%;
+    margin: 1%;
+    z-index: 1;
+}
+
+/*Header Header*/
+.twelve.columns.offset-by-one.column h4 {
+	font-size: 3.4em;
+	font-weight: bold;
+	color: #003366;
+	position: relative;
+	right: 15%;
+}
+
+/*Header Sub-Header*/
+.twelve.columns.offset-by-one.column p {
+	font-size: 1em;
+	color: #003366;
+	position: relative;
+	right: 10%;
+}
+
+/*Tracker Header*/
+.eleven.columns.offset-by-one.column h4 {
+	font-size: 1.6em;
+	color: #003366;
+}
+
+/*Tracker Content*/
+.eleven.columns.offset-by-one.column ul li  {
+	font-size: 1.3em;
+	list-style-type: none;
+    margin: 0;
+    padding: .5em;
+    display: inline;
+    color: #336699;
+    position: relative;
+    left: 5%;
+}
