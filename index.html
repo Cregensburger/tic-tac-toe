@@ -2,132 +2,155 @@
 <html>
 <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Basic Page Needs -->
   <meta charset="utf-8">
   <title>TIC TAC TOE FURY</title>
   <meta name="description" content="A Tic Tac Toe game">
   <meta name="author" content="Courtney R.">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Mobile Specific Metas-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <!-- FONT -->
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!--CSS Style Sheets
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!--CSS Style Sheets -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <!--Icon stuff
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+
+<!--Script-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="javascript.js"></script>
+   <script>
+    $( document ).ready(function() {
+      //putting in x's and o's
+     var turnCount=0;
+     $('input').on('click',function(){
+        if ($(this).prop('value') == "X" || $(this).prop('value') == "O"){
+              alert("NO");
+          } 
+        else {      
+              if (turnCount % 2 === 0) {
+                $(this).prop('value', 'X');
+                /*checkWinner('X');*/
+              } else {
+                $(this).prop('value', 'O');
+                /*checkWinner('O');*/
+              }
+              turnCount++;
+            };
+        })
+      });
+  </script>
+<!--End Script-->
+  <!--Icon stuff-->
+  <!--<link rel="icon" type="image/png" href="images/favicon.png">-->
 
 </head>
 <body>
-
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Primary Page Layout-->
   <div class="container">
     <div class="row">
-<br>
-      <!--board divs START-->
+      <br>
+      <!--header divs START-->
       <div class="twelve columns offset-by-one column">
         <h4>Tic Tac Toe FURY!</h4>
         <p>created by: Courtney Regensburger</p>
       </div>
+      <!--header divs END-->
 
-      <div class="twelve columns headTop"><div>
-        
+    <!--TABLE STARTS-->
+    <div id= "table">
+
     <!--ROW 1-->
-      <!--playbox-->
-      <div class="two columns offset-by-one column">
-        <p>0</p>
-      </div>
+      <div id= "row1">
+        <!--playbox-->
+        <input class="two columns offset-by-one column" id="0cell" type="button">
+        </input>
 
-      <!--line placeholder-->
-      <div class="column vertical">|</div>
+        <!--line placeholder-->
+        <div class="column vertical">|</div>
 
-      <!--playbox-->
-      <div class="two columns offset-by-one column">
-        <p>1</p>
-      </div>
+        <!--playbox-->
+        <input class="two columns offset-by-one column" id="cell1" type="button">
+        </input>
 
-      <!--line placeholder-->
-      <div class="column vertical">|</div>
+        <!--line placeholder-->
+        <div class="column vertical">|</div>
 
-      <!--playbox-->
-      <div class="two columns offset-by-one column">
-        <p>2</p>
-      </div>
+        <!--playbox-->
+        <input class="two columns offset-by-one column" id="cell2" type="button"> 
+        </input>
 
-      <!--horizontal line placeholder-->
-       <div class="column horizontal">-</div>
-
+        <!--horizontal line placeholder-->
+         <div class="column horizontal">-</div>
+       </div>
     <!--ROW 2-->
-      <!--playbox-->
-      <div class="two columns offset-by-one column">
-        <p>3</p>
+      <div id= "row2">
+        <!--playbox-->
+        <input class="two columns offset-by-one column" id="cell3" type="button">
+        </input>
+
+        <!--line placeholder-->
+        <div class="column vertical">|</div>
+
+        <!--playbox-->
+        <input class="two columns offset-by-one column" id="cell4" type="button">
+        </input>
+
+        <!--line placeholder-->
+        <div class="column vertical">|</div>
+
+        <!--playbox-->
+        <input class="two columns offset-by-one column" id="cell5" type="button">
+        </input>
+
+        <!--horizontal line placeholder-->
+         <div class="column horizontal">-</div>
       </div>
-
-      <!--line placeholder-->
-      <div class="column vertical">|</div>
-
-      <!--playbox-->
-      <div class="two columns offset-by-one column">
-        <p>4</p>
-      </div>
-
-      <!--line placeholder-->
-      <div class="column vertical">|</div>
-
-      <!--playbox-->
-      <div class="two columns offset-by-one column">
-        <p>5</p>
-      </div>
-
-      <!--horizontal line placeholder-->
-       <div class="column horizontal">-</div>
-
     <!--ROW 3-->
-      <!--playbox-->
-      <div class="two columns offset-by-one column">
-        <p>6</p>
-      </div>
+      <div id= "row3">
+        <!--playbox-->
+        <input class="two columns offset-by-one column" id="cell6" type="button">
+        </input>
 
-      <!--line placeholder-->
-      <div class="column vertical">|</div>
+        <!--line placeholder-->
+        <div class="column vertical">|</div>
 
-      <!--playbox-->
-      <div class="two columns offset-by-one column">
-        <p>7</p>
-      </div>
+        <!--playbox-->
+        <input class="two columns offset-by-one column" id="cell7" type="button">
+        </input>
 
-      <!--line placeholder-->
-      <div class="column vertical">|</div>
+        <!--line placeholder-->
+        <div class="column vertical">|</div>
 
-      <!--playbox-->
-      <div class="two columns offset-by-one column">
-        <p>8</p>
+        <!--playbox-->
+        <input class="two columns offset-by-one column" id="cell8" type="button">
+        </input>
       </div>
       <!--board placement divs END-->
+    </div>
+
 
       <!--tracker START-->
-      <div class="eleven columns offset-by-one column">
+      <div class="eleven columns offset-by-one column" onclick="colorChange()">
+        <br>
         <h4>Tracker</h4>
         <ul>
           <li><strong>Current Round</strong> x / 3 </li> 
-          <li><strong>Player X Wins</strong> x / 3 </li> 
-          <li><strong>Player O Wins</strong> x / 3 </li> 
+          <li><strong id="x_win" class="win_times add-on">Player X Wins</strong> x / 3 </li> 
+          <li><strong id="o_win" class="win_times add-on">Player O Wins</strong> x / 3 </li> 
           <li><strong>Player Ties</strong> x / 3 </li> 
         <ul>
       </div>
-      <!--tracker END-->
 
+      <div class="one column">
+        <button id="clearBtn" onclick="clearStats()">Reset</strong> </button>
+      </div>
+      <!--tracker END-->
+      
     </div>
   </div>
 <!-- End Document

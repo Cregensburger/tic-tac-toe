@@ -1,40 +1,61 @@
 body {
 	background-color: #FFCC66;
-	color: #336699;
 }
 
-/*Board Spaces*/
-.two.columns.offset-by-one.column p {
-	font-size: 4em;
-	text-align: center;
+
+/*THE TABLE INSIDE SECTIONS*/
+/*Table Spaces*/
+.two.columns.offset-by-one.column {
+	border-color: #FFB739;
+    border-radius: .5em;
     border-style: solid;
-    border-color: #FFB739;
     color: #FFFFFF;
+    font-size: 4em;
+    height: 2em;
     position: relative;
-    top: .2em;
+	text-align: center;
+    -webkit-transition: background-color 1s;
+    -moz-transition:    background-color 1s;
+    -ms-transition:     background-color 1s;
+    -o-transition:      background-color 1s;
+    transition:         background-color 1s;
+    width: 2em;
 }
 
-/*Board Vertical Lines*/
+.two.columns.offset-by-one.column:hover {
+    background-color: darkorange;
+    border-color: #FFB739;
+    border-style: solid;
+    color: #FFFFFF;
+    cursor: pointer;
+    opacity: .6;
+    text-align: center;
+}
+
+
+/*THE TABLE LAYOUT*/
+/*Table Vertical Lines*/
 .column.vertical {
-	text-align: center;
+	border-collapse: collapse;
+    text-align: center;
     color: #336699;
     background-color: #336699;
+    border-radius: 1em;
     position: relative;
     left: 2%;
     height: 8em;
     width: 2%;
-    z-index: 2;
 }
 
-/*Board Horizontal Lines*/
+/*Table Horizontal Lines*/
 .column.horizontal{
 	text-align: center;
     color: #FFB739;
     background-color: #FFB739;
+    border-radius: 1em;
     height: 1.2em;
     width: 85%;
     margin: 1%;
-    z-index: 1;
 }
 
 /*Header Header*/
