@@ -27,7 +27,7 @@
     $( document ).ready(function() {
       //putting in x's and o's
      var turnCount=0;
-     $('input').on('click',function(){
+      $('input').on('click',function(){
         if ($(this).prop('value') == "X" || $(this).prop('value') == "O"){
               alert("NO");
           } 
@@ -41,8 +41,79 @@
               }
               turnCount++;
             };
-        })
+        });
+
+
+      //clearing the board!
+      $('#clearBtn').on('click',function(){
+        location.reload();
       });
+
+      //find that winnar
+      $('input').on('click',function(){
+        
+        //first row
+        if ($('#cell0').prop('value') == "X" && $('#cell1').prop('value') == "X" && $('#cell2').prop('value') == "X"){
+          alert("Player X is the winner!");
+        } //second row
+        else if ($('#cell3').prop('value') == "X" && $('#cell4').prop('value') == "X" && $('#cell5').prop('value') == "X")  {
+          alert("Player X is the winner!");
+        } //third row
+        else if ($('#cell6').prop('value') == "X" && $('#cell7').prop('value') == "X" && $('#cell8').prop('value') == "X") {
+          alert("Player X is the winner!");
+        } //one horizontal
+        else if ($('#cell0').prop('value') == "X" && $('#cell3').prop('value') == "X" && $('#cell6').prop('value') == "X")  {
+          alert("Player X is the winner!");
+        } //two horizontal
+        else if ($('#cell1').prop('value') == "X" && $('#cell4').prop('value') == "X" && $('#cell7').prop('value') == "X") {
+          alert("Player X is the winner!");
+        } //three horizontal
+        else if ($('#cell2').prop('value') == "X" && $('#cell5').prop('value') == "X" && $('#cell8').prop('value') == "X") {
+          alert("Player X is the winner!");
+        } //diagonal one
+        else if ($('#cell0').prop('value') == "X" && $('#cell4').prop('value') == "X" && $('#cell8').prop('value') == "X") {
+          alert("Player X is the winner!");
+        } //diagonal two
+        else if ($('#cell6').prop('value') == "X" && $('#cell4').prop('value') == "X" && $('#cell2').prop('value') == "X") {
+          alert("Player X is the winner!");
+        } 
+
+        //ONTO THE Os
+        else if ($('#cell0').prop('value') == "O" && $('#cell1').prop('value') == "O" && $('#cell2').prop('value') == "O"){
+          alert("Player O is the winner!");
+        } //second row
+        else if ($('#cell3').prop('value') == "O" && $('#cell4').prop('value') == "O" && $('#cell5').prop('value') == "O")  {
+          alert("Player O is the winner!");
+        } //third row
+        else if ($('#cell6').prop('value') == "O" && $('#cell7').prop('value') == "O" && $('#cell8').prop('value') == "O") {
+          alert("Player O is the winner!");
+        } //one horizontal
+        else if ($('#cell0').prop('value') == "O" && $('#cell3').prop('value') == "O" && $('#cell6').prop('value') == "O")  {
+          alert("Player O is the winner!");
+        } //two horizontal
+        else if ($('#cell1').prop('value') == "O" && $('#cell4').prop('value') == "O" && $('#cell7').prop('value') == "O") {
+          alert("Player O is the winner!");
+        } //three horizontal
+        else if ($('#cell2').prop('value') == "O" && $('#cell5').prop('value') == "O" && $('#cell8').prop('value') == "O") {
+          alert("Player O is the winner!");
+        } //diagonal one
+        else if ($('#cell0').prop('value') == "O" && $('#cell4').prop('value') == "O" && $('#cell8').prop('value') == "O") {
+          alert("Player O is the winner!");
+        } //diagonal two
+        else if ($('#cell6').prop('value') == "O" && $('#cell4').prop('value') == "O" && $('#cell2').prop('value') == "O") {
+          alert("Player O is the winner!");
+        } //Cat's game
+        else if (turnCount == 9)
+        {
+          alert("No one is a winner. What fail-boats!");
+        }
+      });
+        
+        
+              /*($('#cell0').prop('value') == "X" && $('#cell1').prop('value') == "X" && $('#cell2').prop('value') == "X") || 
+    
+              ($('#cell0').prop('value') == "X" && $('#cell1').prop('value') == "X" && $('#cell2').prop('value') == "X") */
+    });
   </script>
 <!--End Script-->
   <!--Icon stuff-->
@@ -59,15 +130,17 @@
         <h4>Tic Tac Toe FURY!</h4>
         <p>created by: Courtney Regensburger</p>
       </div>
+      <button class="one column" id="clearBtn">Again?</button>
       <!--header divs END-->
 
     <!--TABLE STARTS-->
+    <br><br><br><br><br><br><br><br><br>
     <div id= "table">
 
     <!--ROW 1-->
       <div id= "row1">
         <!--playbox-->
-        <input class="two columns offset-by-one column" id="0cell" type="button">
+        <input class="two columns offset-by-one column" id="cell0" type="button">
         </input>
 
         <!--line placeholder-->
@@ -85,7 +158,7 @@
         </input>
 
         <!--horizontal line placeholder-->
-         <div class="column horizontal">-</div>
+         <div class="three columns horizontal">-</div>
        </div>
     <!--ROW 2-->
       <div id= "row2">
@@ -108,7 +181,7 @@
         </input>
 
         <!--horizontal line placeholder-->
-         <div class="column horizontal">-</div>
+         <div class="three columns horizontal">-</div>
       </div>
     <!--ROW 3-->
       <div id= "row3">
@@ -135,19 +208,15 @@
 
 
       <!--tracker START-->
-      <div class="eleven columns offset-by-one column" onclick="colorChange()">
+      <div class="eleven columns offset-by-one column">
         <br>
-        <h4>Tracker</h4>
+        <h4>Tracker</h4> 
         <ul>
           <li><strong>Current Round</strong> x / 3 </li> 
           <li><strong id="x_win" class="win_times add-on">Player X Wins</strong> x / 3 </li> 
           <li><strong id="o_win" class="win_times add-on">Player O Wins</strong> x / 3 </li> 
           <li><strong>Player Ties</strong> x / 3 </li> 
         <ul>
-      </div>
-
-      <div class="one column">
-        <button id="clearBtn" onclick="clearStats()">Reset</strong> </button>
       </div>
       <!--tracker END-->
       
