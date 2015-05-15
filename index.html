@@ -34,10 +34,8 @@
         else {      
               if (turnCount % 2 === 0) {
                 $(this).prop('value', 'X');
-                /*checkWinner('X');*/
               } else {
                 $(this).prop('value', 'O');
-                /*checkWinner('O');*/
               }
               turnCount++;
             };
@@ -49,70 +47,138 @@
         location.reload();
       });
 
-      //find that winnar
+      //find that winnar (or tie)
       $('input').on('click',function(){
-        
+        var xWinner=0;
+        var oWinner=0;
+        var tieWinner=0;
+
         //first row
         if ($('#cell0').prop('value') == "X" && $('#cell1').prop('value') == "X" && $('#cell2').prop('value') == "X"){
           alert("Player X is the winner!");
-        } //second row
+            xWinner++;
+            $('#tracker1').val() = xWinner;
+        } 
+
+        //second row
         else if ($('#cell3').prop('value') == "X" && $('#cell4').prop('value') == "X" && $('#cell5').prop('value') == "X")  {
           alert("Player X is the winner!");
-        } //third row
+            xWinner++;
+            $('#tracker1').val() = xWinner;
+        } 
+
+        //third row
         else if ($('#cell6').prop('value') == "X" && $('#cell7').prop('value') == "X" && $('#cell8').prop('value') == "X") {
           alert("Player X is the winner!");
-        } //one horizontal
+            xWinner++;
+            $('#tracker1').val() = xWinner;
+        } 
+
+        //one horizontal
         else if ($('#cell0').prop('value') == "X" && $('#cell3').prop('value') == "X" && $('#cell6').prop('value') == "X")  {
           alert("Player X is the winner!");
-        } //two horizontal
+            xWinner++;
+            $('#tracker1').val() = xWinner;
+        } 
+
+        //two horizontal
         else if ($('#cell1').prop('value') == "X" && $('#cell4').prop('value') == "X" && $('#cell7').prop('value') == "X") {
           alert("Player X is the winner!");
-        } //three horizontal
+            xWinner++;
+            $('#tracker1').val() = xWinner;
+        } 
+
+        //three horizontal
         else if ($('#cell2').prop('value') == "X" && $('#cell5').prop('value') == "X" && $('#cell8').prop('value') == "X") {
           alert("Player X is the winner!");
-        } //diagonal one
+            xWinner++;
+            $('#tracker1').val() = xWinner;
+        } 
+
+        //diagonal one
         else if ($('#cell0').prop('value') == "X" && $('#cell4').prop('value') == "X" && $('#cell8').prop('value') == "X") {
           alert("Player X is the winner!");
-        } //diagonal two
+            xWinner++;
+            $('#tracker1').val() = xWinner;
+        } 
+
+        //diagonal two
         else if ($('#cell6').prop('value') == "X" && $('#cell4').prop('value') == "X" && $('#cell2').prop('value') == "X") {
           alert("Player X is the winner!");
+            xWinner++;
+            $('#tracker1').val() = xWinner;
         } 
 
         //ONTO THE Os
         else if ($('#cell0').prop('value') == "O" && $('#cell1').prop('value') == "O" && $('#cell2').prop('value') == "O"){
           alert("Player O is the winner!");
-        } //second row
+            oWinner++;
+            $('#tracker2').val() = oWinner;
+        } 
+
+        //second row
         else if ($('#cell3').prop('value') == "O" && $('#cell4').prop('value') == "O" && $('#cell5').prop('value') == "O")  {
           alert("Player O is the winner!");
-        } //third row
+            oWinner++;
+            $('#tracker2').val() = oWinner;
+        } 
+
+        //third row
         else if ($('#cell6').prop('value') == "O" && $('#cell7').prop('value') == "O" && $('#cell8').prop('value') == "O") {
           alert("Player O is the winner!");
-        } //one horizontal
+            oWinner++;
+            $('#tracker2').val() = oWinner;
+        } 
+
+        //one horizontal
         else if ($('#cell0').prop('value') == "O" && $('#cell3').prop('value') == "O" && $('#cell6').prop('value') == "O")  {
           alert("Player O is the winner!");
-        } //two horizontal
+            oWinner++;
+            $('#tracker2').val() = oWinner;
+        } 
+
+        //two horizontal
         else if ($('#cell1').prop('value') == "O" && $('#cell4').prop('value') == "O" && $('#cell7').prop('value') == "O") {
           alert("Player O is the winner!");
-        } //three horizontal
+            oWinner++;
+            $('#tracker2').val() = oWinner;
+        } 
+
+        //three horizontal
         else if ($('#cell2').prop('value') == "O" && $('#cell5').prop('value') == "O" && $('#cell8').prop('value') == "O") {
           alert("Player O is the winner!");
-        } //diagonal one
+            oWinner++;
+            $('#tracker2').val() = oWinner;
+        } 
+
+        //diagonal one
         else if ($('#cell0').prop('value') == "O" && $('#cell4').prop('value') == "O" && $('#cell8').prop('value') == "O") {
           alert("Player O is the winner!");
-        } //diagonal two
+            oWinner++;
+            $('#tracker2').val() = oWinner;
+        } 
+
+        //diagonal two
         else if ($('#cell6').prop('value') == "O" && $('#cell4').prop('value') == "O" && $('#cell2').prop('value') == "O") {
           alert("Player O is the winner!");
-        } //Cat's game
+            oWinner++;
+            $('#tracker2').val() = oWinner;
+        } 
+
+        //Cat's game
         else if (turnCount == 9)
         {
           alert("No one is a winner. What fail-boats!");
+            tieWinner++;
+            $('#tracker3').val() = tieWinner;
         }
       });
+
+      //record that winnar!
+
+
         
-        
-              /*($('#cell0').prop('value') == "X" && $('#cell1').prop('value') == "X" && $('#cell2').prop('value') == "X") || 
-    
-              ($('#cell0').prop('value') == "X" && $('#cell1').prop('value') == "X" && $('#cell2').prop('value') == "X") */
+
     });
   </script>
 <!--End Script-->
@@ -207,15 +273,21 @@
     </div>
 
 
-      <!--tracker START-->
+      <!--tracker header START-->
       <div class="eleven columns offset-by-one column">
         <br>
         <h4>Tracker</h4> 
+      </div>
+      <!--tracker header END-->
+
+      <!--tracker START-->
+      <div class="eleven columns offset-by-one column">
         <ul>
-          <li><strong>Current Round</strong> x / 3 </li> 
-          <li><strong id="x_win" class="win_times add-on">Player X Wins</strong> x / 3 </li> 
-          <li><strong id="o_win" class="win_times add-on">Player O Wins</strong> x / 3 </li> 
-          <li><strong>Player Ties</strong> x / 3 </li> 
+          <li><strong id="x_win" class="win_times add-on">Player X Wins</strong> <button id="tracker1" name="xWins" type="text"></button></li> 
+
+          <li><strong id="o_win" class="win_times add-on">Player O Wins</strong> <button id="tracker2" name="oWins" type="text"></button></li> 
+
+          <li><strong>Player Ties</strong><button id="tracker3" name="ties" type="text"> </button></li> 
         <ul>
       </div>
       <!--tracker END-->

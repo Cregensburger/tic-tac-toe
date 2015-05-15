@@ -1,5 +1,6 @@
 body {
 	background-color: #FFCC66;
+    color: red;
 }
 
 
@@ -79,20 +80,32 @@ body {
 
 /*Tracker Header*/
 .eleven.columns.offset-by-one.column h4 {
-	font-size: 1.6em;
+    font-size: 1.6em;
 	color: #003366;
 }
 
 /*Tracker Content*/
-.eleven.columns.offset-by-one.column ul li  {
+.eleven.columns.offset-by-one.column ul li {
 	font-size: 1.3em;
 	list-style-type: none;
     margin: 0;
     padding: .5em;
-    display: inline;
+    display: inline-block;
     color: #336699;
     position: relative;
     left: 5%;
+    bottom: 2em;
+}
+
+/*Tracker Content*/
+.eleven.columns.offset-by-one.column ul li button {
+    color: red;
+    background: white;
+    opacity: .5;
+    margin: 1em;
+    padding: 2.5em;
+    position: relative;
+    bottom: 1em;
 }
 
 #clearBtn {
